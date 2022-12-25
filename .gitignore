@@ -1,0 +1,15 @@
+**/rebel.xml
+**/.rebel.xml.bak
+
+**/*.iml
+.idea/*
+
+/target
+**/target
+
+**/*.iml
+
+**/*.war
+
+client.properties
+
