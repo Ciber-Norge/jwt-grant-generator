@@ -15,21 +15,28 @@ To generate a jwt-grant you need a property file holding your client configurati
 
 ```
 issuer=<Your client_id>
-audience=<Identifier of the Maskinporten instance you want to use, i.e. for ver2 env:  https://ver2.maskinporten.no/>
+audience=<Identifier of the Maskinporten instance you want to use, i.e. for test env:  https://test.maskinporten.no/>
 resource=<The intended audience for token. If included, the value will be transparantly set as the aud-claim in the access token>
 scope=<scopes to request access for (space delimited list), i.e. for id-porten self service api use: idporten:dcr.read idporten:dcr.write>
 
-keystore.file=<path to your keystore file holding your virksomhetssertifikat / keypair>
+keystore.type=<keystore type, default is JKS>
+keystore.file=<path to your keystore file holding your virksomhetssertifikat / keypair, or base64-encoded keystore>
 keystore.password=<keystore password>
 keystore.alias=<alias for your virksomhetssertifikat's key>
 keystore.alias.password=<alias password>
 
 ```
 
+To use base64-encoded keystore, use:
+
+```
+keystore.file=base64:/u3+7QAAAAIAAAADAAAAAQAPY29tbWZp...
+```
+
 To also retrieve an access-token from an authorization server, add this property to the properties file:
 
 ```
-token.endpoint=<Token endpoint to use, i.e. in ver2 env: https://ver2.maskinporten.no/token>
+token.endpoint=<Token endpoint to use, i.e. in test env: https://test.maskinporten.no/token>
 ```
 
 If you want to generate a token utilising the delegation capabilities in Maskinporten, add this property to the properties file:
@@ -49,7 +56,7 @@ To build and run use:
 ```
 mvn package
 
-java -jar target\jwt-grant-generator-1.0-SNAPSHOT-jar-with-dependencies.jar myclient.properties
+java -jar target\jwt-grant-generator-1.1.0-SNAPSHOT-jar-with-dependencies.jar myclient.properties
 
 ```
 
@@ -58,7 +65,7 @@ If you want the response as json, you can add an additional parameter so the com
 ```
 mvn package
 
-java -jar target\jwt-grant-generator-1.0-SNAPSHOT-jar-with-dependencies.jar myclient.properties json
+java -jar target\jwt-grant-generator-1.1.0-SNAPSHOT-jar-with-dependencies.jar myclient.properties json
 
 ```
 

@@ -1,3 +1,6 @@
+# Jenv settings
+/.java-version
+
 **/rebel.xml
 **/.rebel.xml.bak
 
