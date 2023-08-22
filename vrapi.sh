@@ -28,7 +28,7 @@ fi
 SERVER_ADDRESS_STAGE="https://valutareginnrapp-test.skatteetaten.no"
 #SERVER_ADDRESS_UTV="http://cib-vrit-app1.cib2.osl.basefarm.net:8080"
 SERVER_ADDRESS_UTV="https://cib-vrit-app-vip.cib2.osl.basefarm.net"
-SERVER_ADDRESS_LOCAL="http://127.0.0.1:8080"
+SERVER_ADDRESS_LOCAL="https://127.0.0.1:8443"
 LEGAL_OPERATIONS=(getReceipts getReceipt deleteReceipt postFile)
 
 if [ "$1" == "l" ]; then
