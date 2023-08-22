@@ -48,7 +48,7 @@ if [ "$#" -eq 3 ]; then
   FILENAME=$3
 fi
 
-TOKEN=`java -jar target/jwt-grant-generator-1.0-SNAPSHOT-jar-with-dependencies.jar ./client.properties json | cut -f 4 -d ":" | cut -f 2 -d "\""`
+TOKEN=`java -jar target/jwt-grant-generator-1.1.0-SNAPSHOT-jar-with-dependencies.jar ./client.properties json | cut -f 4 -d ":" | cut -f 2 -d "\""`
 
 #echo $TOKEN
 # options to curl
